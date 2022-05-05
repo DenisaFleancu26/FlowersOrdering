@@ -1,0 +1,34 @@
+Flowers Ordering Aplication
+
+Membrii echipă: Fleancu Denisa, Frățilă Alexandra-Gabriela
+
+Descriere generală:
+    Aplicația are ca scop principal să ajute atât clientii, cât și florăriile, oferindu-le posibilitatea florăriilor să
+crească și oferindu-le un access rapid la o gamă variată de flori clienților.
+
+
+Înregistrarea (pentru client și florărie):
+    User-ul trebuie să se înregistreze prima dată în aplicație selectând una dintre cele 2 roluri: client sau manager de
+florărie. Ambelor roluri le este necesar un nume unic, o parolă și informații generale cum ar fi: numele complet al
+clientului/florăriei, adresa și numărul de telefon.
+
+Florărie:
+    După ce managerul s-a logat, el poate adăuga, edita sau șterge orice item din catalogul său. Un aranjament al
+catalogului ar trebui să conțină numele, o fotografie, prețul și opțional 3 mărimi pentru un astfel de aranjament
+(mică, medie și mare).
+    De asemenea, după logare el va vedea o listă a comenziilor primite pentru ziua curentă.
+    Din lista comenziilor, florăria își rezervă dreptul să accepte sau să respingă o comandă, specificând motivul
+respingerii și unde este cazul specificând ora la care va ajunge comanda.
+    Managerul are un buton und epoate vedea toate comenziile livrate ale florăriei până în present.
+
+Client:
+    Un client trebuie să se logheze în aplicație unde el va putea să vadă o listă cu toate florăriile.
+Acesta are opțiunea de a căuta în listă după numele florăriei.
+    Un client logat poate să vadă de asemenea catalogul unei anumite florării, selectând florăria din listă.
+    De asemenea, un client logat poate selecta orice cantitate pentru orice aranjament din catalog al unei florării,
+și poate crea o comandă conținând aranjamentele selectate, el poate alege și ora la care dorește să îi fie livrată sau
+poate să aleagă doar ziua livrării.
+    Un client poate vedea, de asemena, toate comenziile din trecut cu statusul lor (acceptată, respinsă, în așteptare
+sau livrată). Dacă o comandă este respinsă, se va afișa și motivul respingerii. Dacă comanda a fost acceptată îi va
+apărea și ora la care va ajunge (fie ora selectată de el, fie o altă oră în cazul in care nu a ales o oră anume).
+Un client va modifica statusul unei comenzi acceptate ca livrată.
