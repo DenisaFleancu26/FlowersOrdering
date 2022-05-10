@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane cache="true" depthTest="DISABLE" prefHeight="455.0" prefWidth="728.0" style="-fx-background-color: #ffe6ff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+    <PasswordField fx:id="passwordField" layoutX="410.0" layoutY="174.0" prefHeight="26.0" prefWidth="186.0" />
+    <TextField fx:id="usernameField" layoutX="412.0" layoutY="118.0" prefHeight="26.0" prefWidth="186.0" />
+    <ChoiceBox fx:id="role" layoutX="410.0" layoutY="225.0" prefHeight="26.0" prefWidth="186.0" AnchorPane.bottomAnchor="217.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="225.0" />
+    <Button layoutX="576.0" layoutY="300.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="82.0" style="-fx-cursor: hand;" text="Login">
+        <font>
+            <Font name="Leelawadee UI Bold" size="14.0" />
+        </font>
+    </Button>
+    <Button layoutX="405.0" layoutY="410.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Sign up!" textFill="#c424a7" underline="true">
+        <font>
+            <Font name="Leelawadee UI Bold" size="13.0" />
+        </font>
+    </Button>
+    <Label contentDisplay="CENTER" layoutX="287.0" layoutY="32.0" prefHeight="46.0" prefWidth="105.0" text="Login">
+        <font>
+            <Font name="Leelawadee Bold" size="36.0" />
+        </font>
+    </Label>
+    <Label layoutX="293.0" layoutY="117.0" prefHeight="27.0" prefWidth="94.0" text="Username">
+        <font>
+            <Font name="Leelawadee UI Bold" size="19.0" />
+        </font>
+    </Label>
+    <Label layoutX="293.0" layoutY="174.0" prefHeight="27.0" prefWidth="94.0" text="Password">
+        <font>
+            <Font name="Leelawadee UI Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="293.0" layoutY="227.0" text="Role">
+        <font>
+            <Font name="Leelawadee UI Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="287.0" layoutY="416.0" prefHeight="20.0" prefWidth="118.0" text="Need an account?">
+        <font>
+            <Font name="Leelawadee UI Bold" size="14.0" />
+        </font>
+    </Label>
+    <ImageView fx:id="imageBackground" fitHeight="467.0" fitWidth="255.0" layoutX="40.0" layoutY="112.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="472.0" AnchorPane.topAnchor="0.0">
+        <image>
+            <Image url="@../java/org/loose/fis/sre/Images/fundal.jpg" />
+        </image>
+    </ImageView>
+</AnchorPane>
