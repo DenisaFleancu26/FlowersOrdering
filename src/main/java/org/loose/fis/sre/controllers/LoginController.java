@@ -25,6 +25,7 @@ public class LoginController {
 
     @FXML
     public void initialize() {
+        role.getItems().addAll("Manager", "Customer");
         File fundalFile = new File("src/main/java/org/loose/fis/sre/images/fundal.jpg");
         Image fundalImage = new Image(fundalFile.toURI().toString());
         imageBackground.setImage(fundalImage);
