@@ -2,6 +2,7 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.InvalidDataException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
 
@@ -18,8 +19,8 @@ public class UserService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("registration-example.db").toFile())
-                .openOrCreate("test", "test");
+                .filePath(getPathToFile("Flowers-Ordering.db").toFile())
+                .openOrCreate("Flower13", "Blummen");
 
         userRepository = database.getRepository(User.class);
     }
@@ -34,6 +35,30 @@ public class UserService {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
+    }
+
+    public static int checkInvalidLogin(String username,String password,String role) {
+        for(User user: userRepository.find()){
+            String encryptedPassword = encodePassword(username, password);
+            if(Objects.equals(username, user.getUsername()) && Objects.equals(role, user.getRole()) && Objects.equals(encryptedPassword, user.getPassword()))
+                return 1;
+        }
+        return 0;
+    }
+
+    public static void checkInvalidData(String username,String role,String newPasswordField,String confirmNewPasswordField) throws InvalidDataException {
+        int ok=0;
+        for (User user : UserService.userRepository.find()) {
+            if(newPasswordField!=null && confirmNewPasswordField!=null)
+                if (Objects.equals(username, user.getUsername()) && Objects.equals(role, user.getRole()) && Objects.equals(newPasswordField, confirmNewPasswordField))
+                {
+                    String encryptedPassword = encodePassword(username, newPasswordField);
+                    user.setPassword(encryptedPassword);
+                    userRepository.update(user);
+                    ok=1;
+                }
+        }
+        if(ok==0) throw new InvalidDataException();
     }
 
     private static String encodePassword(String salt, String password) {
