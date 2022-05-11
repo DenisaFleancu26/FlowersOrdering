@@ -9,7 +9,7 @@
     <PasswordField fx:id="passwordField" layoutX="410.0" layoutY="174.0" prefHeight="26.0" prefWidth="186.0" />
     <TextField fx:id="usernameField" layoutX="412.0" layoutY="118.0" prefHeight="26.0" prefWidth="186.0" />
     <ChoiceBox fx:id="role" layoutX="410.0" layoutY="225.0" prefHeight="26.0" prefWidth="186.0" AnchorPane.bottomAnchor="217.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="225.0" />
-    <Button layoutX="576.0" layoutY="300.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="82.0" style="-fx-cursor: hand;" text="Login">
+    <Button layoutX="576.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="30.0" prefWidth="82.0" style="-fx-cursor: hand;" text="Login">
         <font>
             <Font name="Leelawadee UI Bold" size="14.0" />
         </font>
@@ -49,4 +49,9 @@
             <Image url="@../java/org/loose/fis/sre/Images/fundal.jpg" />
         </image>
     </ImageView>
+    <Text fx:id="loginMessage" fill="RED" layoutX="346.0" layoutY="320.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="162.93670654296875">
+        <font>
+            <Font name="Leelawadee UI" size="14.0" />
+        </font>
+    </Text>
 </AnchorPane>

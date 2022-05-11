@@ -18,8 +18,8 @@ public class UserService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("registration-example.db").toFile())
-                .openOrCreate("test", "test");
+                .filePath(getPathToFile("Flowers-Ordering.db").toFile())
+                .openOrCreate("Flower13", "Blummen");
 
         userRepository = database.getRepository(User.class);
     }
@@ -34,6 +34,15 @@ public class UserService {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
+    }
+
+    public static int checkInvalidLogin(String username,String password,String role) {
+        for(User user: userRepository.find()){
+            String encryptedPassword = encodePassword(username, password);
+            if(Objects.equals(username, user.getUsername()) && Objects.equals(role, user.getRole()) && Objects.equals(encryptedPassword, user.getPassword()))
+                return 1;
+        }
+        return 0;
     }
 
     private static String encodePassword(String salt, String password) {
