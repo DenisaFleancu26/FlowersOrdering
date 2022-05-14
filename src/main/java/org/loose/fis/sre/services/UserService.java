@@ -4,6 +4,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.InvalidDataException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.EmailAlreadyExistsException;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -25,15 +26,17 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
-        checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
+    public static void addUser(String username, String password, String address, String email, String firstName, String lastName, String phoneNumber ) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
+        checkUserDoesNotAlreadyExist(username, email);
+        userRepository.insert(new User(username, encodePassword(username, password), "Customer", address, email, firstName, lastName, phoneNumber));
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    private static void checkUserDoesNotAlreadyExist(String username, String email) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
         for (User user : userRepository.find()) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
+            if (Objects.equals(email, user.getEmail()))
+                throw new EmailAlreadyExistsException(email);
         }
     }
 
