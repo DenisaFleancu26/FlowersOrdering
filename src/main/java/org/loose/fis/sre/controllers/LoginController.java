@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.exceptions.InvalidValidationException;
 import org.loose.fis.sre.services.UserService;
+import javafx.scene.control.Button;
 
 import java.io.File;
 
@@ -33,6 +34,9 @@ public class LoginController {
 
     @FXML
     private Text loginMessage;
+
+    @FXML
+    private Button SignUp;
 
     @FXML
     public void initialize() {
@@ -61,5 +65,17 @@ public class LoginController {
         stage.setTitle("Reset Password");
         stage.setScene(new Scene(root, 730, 468));
         stage.show();
+    }
+
+    @FXML
+    void handleSignUpAction(javafx.event.ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("register.fxml"));
+        Pane root = fxmlLoader.load();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        stage.setTitle("Choose role type registration");
+        stage.setScene(new Scene(root, 730, 468));
+        stage.show();
+
     }
 }
