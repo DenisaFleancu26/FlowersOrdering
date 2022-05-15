@@ -31,6 +31,9 @@ public class EditItem {
     private ImageView DashboardImage;
 
     @FXML
+    private ImageView ImageBackground;
+
+    @FXML
     private Button DashboardUp;
 
     @FXML
@@ -48,7 +51,11 @@ public class EditItem {
     @FXML
     public void initialize() {
 
-        File catalogFile = new File("src/main/java/org/loose/fis/sre/images/catalog.png");
+        File fundalFile = new File("src/main/java/org/loose/fis/sre/images/fundal.jpg");
+        Image fundalImage = new Image(fundalFile.toURI().toString());
+        ImageBackground.setImage(fundalImage);
+
+        File catalogFile = new File("src/main/java/org/loose/fis/sre/images/add.png");
         Image catalogImage = new Image(catalogFile.toURI().toString());
         AddImage.setImage(catalogImage);
 
@@ -56,11 +63,11 @@ public class EditItem {
         Image dashboardImage = new Image(dashboardFile.toURI().toString());
         DashboardImage.setImage(dashboardImage);
 
-        File editImageFile = new File("src/main/java/org/loose/fis/sre/images/add.png");
+        File editImageFile = new File("src/main/java/org/loose/fis/sre/images/delete.png");
         Image editImage = new Image(editImageFile.toURI().toString());
         DeleteItemsImage.setImage(editImage);
 
-        File historyFile = new File("src/main/java/org/loose/fis/sre/images/history.png");
+        File historyFile = new File("src/main/java/org/loose/fis/sre/images/back.png");
         Image historyImage = new Image(historyFile.toURI().toString());
         BackImage.setImage(historyImage);
 
