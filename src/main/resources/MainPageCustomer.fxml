@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #ffe6ff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainPageCustomer">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #ffe6ff;">
+         <children>
+            <AnchorPane prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #800060;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="25.0" prefWidth="1200.0" style="-fx-background-color: #4d0039;" />
+                  <HBox layoutX="297.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <Button fx:id="DashboardUp" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="DashboardImageUp" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="OrdersUp" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Orders" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="OrdersImageUp" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/checkout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="HistoryUp" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="History" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="HistoryImageUp" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/history.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="LogOutUp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleLogOutAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="LogOutImageUp" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/log-out.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="Menu" layoutX="14.0" layoutY="32.0" prefHeight="40.0" prefWidth="180.0" text="MENU" textFill="WHITE">
+                     <font>
+                        <Font name="Leelawadee UI" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="MenuImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../java/org/loose/fis/sre/Images/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="MenuClose" layoutX="14.0" layoutY="32.0" prefHeight="40.0" prefWidth="180.0" text="MENU" textFill="WHITE">
+                     <font>
+                        <Font name="Leelawadee UI" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="MenuImage1" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../java/org/loose/fis/sre/Images/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Slider2" layoutX="6.0" layoutY="75.0" prefHeight="624.0" prefWidth="306.0" style="-fx-background-color: #4d0039;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="75.0">
+               <children>
+                  <VBox fx:id="Slider" prefHeight="625.0" prefWidth="300.0">
+                     <children>
+                        <Button fx:id="Dashboard" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="95.0" prefWidth="299.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="DashboardImage" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="FlowerShop" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Search a flower shop" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="FlowerShopImage" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/searching.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Flower" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Flowers Shops" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="FlowerImage" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/flowersicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="History" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="History" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="HistoryImage" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/history.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Orders" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Orders" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="OrdersImage" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/checkout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="LogOut" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleLogOutAction" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="LogOutImage" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/log-out.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <ImageView fx:id="welcome" fitHeight="654.0" fitWidth="900.0" layoutX="289.0" layoutY="79.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+               <image>
+                  <Image url="@../java/org/loose/fis/sre/Images/welcome.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
