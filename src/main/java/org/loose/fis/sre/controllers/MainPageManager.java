@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
@@ -185,6 +186,17 @@ public class MainPageManager {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         stage.setTitle("Login");
         stage.setScene(new Scene(root, 730, 468));
+        stage.show();
+    }
+
+    @FXML
+    void handleEditItemsAction(javafx.event.ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("EditItem.fxml"));
+        Pane root = fxmlLoader.load();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        stage.setTitle("Manager - edit items");
+        stage.setScene(new Scene(root, 1200, 700));
         stage.show();
     }
 
