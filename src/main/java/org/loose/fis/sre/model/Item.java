@@ -2,25 +2,34 @@ package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
 
-import java.util.Objects;
-
 public class Item {
 
     @Id
     private String id;
     private String name;
-    private int price;
+    private String price;
     private String size;
+    private String img;
 
     public Item() {
 
     }
 
-    public Item(String id, String name, int price, String size) {
+    public Item(String id, String name, String price, String size, String img ) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.size = size;
+        this.img = img;
+        //img = new Image(new FileInputStream("url for the image"));
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public void setId(String id) {
@@ -31,7 +40,7 @@ public class Item {
         this.name = name;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -47,7 +56,7 @@ public class Item {
         return name;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
@@ -55,5 +64,25 @@ public class Item {
         return size;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Item item = (Item) o;
+
+        return id.equals(item.id);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
+        result = 31 * result + (size != null ? size.hashCode() : 0);
+        result = 31 * result + (img != null ? img.hashCode() : 0);
+
+        return result;
+    }
 }
