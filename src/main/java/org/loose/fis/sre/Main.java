@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import org.loose.fis.sre.services.FileSystemService;
 import org.loose.fis.sre.services.UserService;
 import org.loose.fis.sre.services.UserManagerService;
+import org.loose.fis.sre.services.ItemsService;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,6 +20,7 @@ public class Main extends Application {
         initDirectory();
         UserService.initDatabase();
         UserManagerService.initDatabase();
+        ItemsService.initDatabase();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 730, 468));
