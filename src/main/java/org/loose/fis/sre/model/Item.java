@@ -21,7 +21,6 @@ public class Item {
         this.price = price;
         this.size = size;
         this.img = img;
-        //img = new Image(new FileInputStream("url for the image"));
     }
 
     public String getImg() {
