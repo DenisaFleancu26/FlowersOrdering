@@ -1,8 +1,11 @@
 package org.loose.fis.sre.controllers;
 
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,9 +15,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
@@ -190,16 +190,15 @@ public class MainPageManager {
     }
 
     @FXML
-    void handleEditItemsAction(javafx.event.ActionEvent event) throws Exception {
+    void handleEditItemsAction(ActionEvent event) throws Exception {
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("EditItem.fxml"));
-        Pane root = fxmlLoader.load();
-        ((Node) (event.getSource())).getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getClassLoader().getResource("EditItem.fxml"));
+        Pane root = (Pane)fxmlLoader.load();
+        ((Node)event.getSource()).getScene().getWindow().hide();
         stage.setTitle("Manager - edit items");
-        stage.setScene(new Scene(root, 1200, 700));
+        stage.setScene(new Scene((Parent)root, 1200.0, 700.0));
         stage.show();
     }
-
 
 }
 
