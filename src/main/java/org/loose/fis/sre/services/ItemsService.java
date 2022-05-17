@@ -3,12 +3,14 @@ package org.loose.fis.sre.services;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.IdAlreadyExistsException;
+import org.loose.fis.sre.exceptions.IdDoesNotExistException;
 import org.loose.fis.sre.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 
@@ -42,9 +44,25 @@ public class ItemsService {
         userRepository = database.getRepository(Item.class);
     }
 
+    public static void deleteItem(String id ) throws IdDoesNotExistException {
+        checkIdDoesNotExist(id);
+        userRepository.remove(eq("id", id));
+    }
+
     public static void addItem(String id, String name, String price, String size, String img) throws IdAlreadyExistsException {
         checkIdDoesNotAlreadyExist(id);
         userRepository.insert(new Item(id, name, price, size, img));
+    }
+
+    private static void checkIdDoesNotExist(String id) throws IdDoesNotExistException {
+        int ok =0;
+        for (Item item : userRepository.find())
+            if (Objects.equals(id, item.getId()))
+                ok = 1;
+        if ( ok == 0 )
+            throw new IdDoesNotExistException(id);
+
+
     }
 
     private static void checkIdDoesNotAlreadyExist(String id) throws IdAlreadyExistsException {
