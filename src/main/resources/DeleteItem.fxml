@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.DeleteItem">
+<children>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffe6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <Label layoutX="759.0" layoutY="349.0" prefHeight="28.0" prefWidth="71.0" text="Id">
+                <font>
+                    <Font name="Leelawadee UI Bold" size="19.0" />
+                </font>
+            </Label>
+            <AnchorPane layoutX="6.0" layoutY="54.0" prefHeight="650.0" prefWidth="260.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="50.0">
+                <children>
+                    <ImageView fx:id="backgroundImage" fitHeight="654.0" fitWidth="400.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <image>
+                            <Image url="@../java/org/loose/fis/sre/Images/fundal.jpg" />
+                        </image>
+                    </ImageView>
+                </children>
+            </AnchorPane>
+            <TextField fx:id="idField" layoutX="849.0" layoutY="350.0" prefHeight="26.0" prefWidth="225.0" />
+            <Button fx:id="DeleteFromShop" layoutX="954.0" layoutY="606.0" mnemonicParsing="false" onAction="#handleDeleteFromShopAction" prefHeight="54.0" prefWidth="204.0" style="-fx-background-color: transparent;" text="Delete from shop">
+                <font>
+                    <Font name="Leelawadee UI Bold" size="15.0" />
+                </font>
+            </Button>
+            <Text fx:id="addMessage" fill="RED" layoutX="328.0" layoutY="480.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="225.0">
+                <font>
+                    <Font name="Leelawadee UI" size="25.0" />
+                </font>
+            </Text>
+            <Button fx:id="ShowItem" layoutX="911.0" layoutY="400.0" mnemonicParsing="false" text="Show item that want to be deleted">
+               <font>
+                  <Font name="Leelawadee UI Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="trash" fitHeight="272.0" fitWidth="284.0" layoutX="426.0" layoutY="400.0" opacity="0.78" pickOnBounds="true">
+               <image>
+                  <Image url="@../java/org/loose/fis/sre/Images/trash.png" />
+               </image>
+            </ImageView>
+        </children>
+    </AnchorPane>
+    <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #800060;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <children>
+                    <Button fx:id="DashboardUp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleDashboardUpAction" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="Leelawadee UI Bold" size="20.0" />
+                        </font>
+                        <graphic>
+                            <ImageView fx:id="DashboardImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/home.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="Back" alignment="BASELINE_RIGHT" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Back" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="Leelawadee UI Bold" size="20.0" />
+                        </font>
+                        <graphic>
+                            <ImageView fx:id="BackImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/back.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="LogOutUp" alignment="BASELINE_RIGHT" mnemonicParsing="false" onAction="#handleLogOutAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="Leelawadee UI Bold" size="20.0" />
+                        </font>
+                        <graphic>
+                            <ImageView fx:id="LogOutImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../java/org/loose/fis/sre/Images/log-out.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </children>
+            </HBox>
+        </children>
+    </AnchorPane>
+      <AnchorPane layoutX="841.0" layoutY="108.0" prefHeight="215.0" prefWidth="225.0" style="-fx-background-color: #ffe6ff;">
+         <children>
+            <ImageView fx:id="itemImage" fitHeight="215.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+</children>
+</AnchorPane>
