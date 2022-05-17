@@ -35,7 +35,7 @@
                     <Font name="Leelawadee UI Bold" size="15.0" />
                 </font>
             </Button>
-            <Text fx:id="addMessage" fill="RED" layoutX="460.0" layoutY="385.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="225.0">
+            <Text fx:id="addMessage" fill="RED" layoutX="427.0" layoutY="306.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="225.0">
                 <font>
                     <Font name="Leelawadee UI" size="25.0" />
                 </font>

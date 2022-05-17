@@ -1,6 +1,5 @@
 package org.loose.fis.sre.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.IdDoesNotExistException;
 import org.loose.fis.sre.model.Item;
 import org.loose.fis.sre.services.ItemsService;
 
@@ -87,8 +87,13 @@ public class DeleteItem {
     }
 
     @FXML
-    void handleDeleteFromShopAction(ActionEvent event) {
-
+    void handleDeleteFromShopAction(javafx.event.ActionEvent event) throws Exception  {
+        try{
+            ItemsService.deleteItem(idField.getText()/*, nameField.getText(), priceField.getText(), ((String) size.getValue() ), image*/);
+            addMessage.setText("Item deleted successfully!");
+       } catch ( IdDoesNotExistException e) {
+            addMessage.setText(e.getMessage());
+        }
     }
 
     @FXML
