@@ -151,4 +151,26 @@ public class EditItem {
         stage.show();
     }
 
+    @FXML
+    void handleDeleteItemAction(javafx.event.ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("DeleteItem.fxml"));
+        Pane root = fxmlLoader.load();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        stage.setTitle("Delete an item");
+        stage.setScene(new Scene(root, 1200, 700));
+        stage.show();
+    }
+
+    @FXML
+    void handleDashboardUpAction(javafx.event.ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainPageManager.fxml"));
+        Pane root = fxmlLoader.<Pane>load();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        stage.setTitle("Flowers Ordering (Manager)");
+        stage.setScene(new Scene(root, 1200, 700));
+        stage.show();
+    }
+
 }
