@@ -35,17 +35,17 @@
                     <Font name="Leelawadee UI Bold" size="15.0" />
                 </font>
             </Button>
-            <Text fx:id="addMessage" fill="RED" layoutX="328.0" layoutY="480.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="225.0">
+            <Text fx:id="addMessage" fill="RED" layoutX="460.0" layoutY="385.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="225.0">
                 <font>
                     <Font name="Leelawadee UI" size="25.0" />
                 </font>
             </Text>
-            <Button fx:id="ShowItem" layoutX="911.0" layoutY="400.0" mnemonicParsing="false" text="Show item that want to be deleted">
+            <Button fx:id="ShowItem" layoutX="911.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleShowItemAction" text="Show item that want to be deleted">
                <font>
                   <Font name="Leelawadee UI Bold" size="15.0" />
                </font>
             </Button>
-            <ImageView fx:id="trash" fitHeight="272.0" fitWidth="284.0" layoutX="426.0" layoutY="400.0" opacity="0.78" pickOnBounds="true">
+            <ImageView fx:id="trash" fitHeight="272.0" fitWidth="284.0" layoutX="427.0" layoutY="400.0" opacity="0.78" pickOnBounds="true">
                <image>
                   <Image url="@../java/org/loose/fis/sre/Images/trash.png" />
                </image>

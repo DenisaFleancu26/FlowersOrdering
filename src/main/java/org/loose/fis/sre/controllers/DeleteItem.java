@@ -12,8 +12,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.loose.fis.sre.model.Item;
+import org.loose.fis.sre.services.ItemsService;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeleteItem {
 
@@ -56,6 +60,8 @@ public class DeleteItem {
     @FXML
     private ImageView trash;
 
+    private List<Item> itemi = new ArrayList<>();
+
     @FXML
     public void initialize() {
         File fundalFile = new File("src/main/java/org/loose/fis/sre/images/fundal.jpg");
@@ -83,6 +89,30 @@ public class DeleteItem {
     @FXML
     void handleDeleteFromShopAction(ActionEvent event) {
 
+    }
+
+    @FXML
+    void handleShowItemAction(javafx.event.ActionEvent event) {
+        itemi = ItemsService.getDataa();
+        int ok = 0;
+
+            for (Item itemm : itemi ) {
+                if( idField.getText().equals(itemm.getId())) {
+                    var test = itemm.getImg().replace("\\\\", "\\");
+                    try {
+                        itemImage.setImage(new Image(itemm.getImg().replace("\\\\", "\\")));
+                    } catch (Exception ex) {
+                        System.out.println(itemm.getImg().replace("\\\\", "\\"));
+                        File invalid = new File("src/main/java/org/loose/fis/sre/Images/error.jpg");
+                        Image inval = new Image(invalid.toURI().toString());
+                        itemImage.setImage(inval);
+                    }
+                    ok = 1;
+                }
+
+            }
+        if(ok == 0)
+            addMessage.setText("Your data is invalid!");
     }
 
     @FXML
