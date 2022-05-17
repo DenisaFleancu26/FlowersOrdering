@@ -18,7 +18,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button fx:id="DashboardUp" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="DashboardUp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleDashboardUpAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Leelawadee UI Bold" size="20.0" />
                            </font>
@@ -42,7 +42,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="DeleteItem" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Delete item" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="DeleteItem" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleDeleteItemAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Delete item" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Leelawadee UI Bold" size="20.0" />
                            </font>
