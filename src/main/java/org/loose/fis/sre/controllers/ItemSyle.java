@@ -6,6 +6,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import org.loose.fis.sre.model.Item;
 
+import java.io.File;
+
 public class ItemSyle {
 
     @FXML
@@ -37,6 +39,9 @@ public class ItemSyle {
         }
         catch (Exception ex){
             System.out.println(item.getImg().replace("\\\\","\\"));
+            File invalid = new File("src/main/java/org/loose/fis/sre/Images/error.jpg");
+            Image inval = new Image(invalid.toURI().toString());
+            ItemImage.setImage(inval);
         }
     }
 
