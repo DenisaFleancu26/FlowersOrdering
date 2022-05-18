@@ -38,6 +38,9 @@ public class FlowersShopsItemsController {
     private Button DashboardUp;
 
     @FXML
+    private Button addInChart;
+
+    @FXML
     private GridPane ItemContainer;
 
     @FXML
@@ -146,7 +149,7 @@ public class FlowersShopsItemsController {
     }
 
     @FXML
-    void handleSearchButtonAction(javafx.event.ActionEvent event) {
+    void handleSearchButtonAction(javafx.event.ActionEvent event) throws Exception{
         itemi = ItemsService.getDataa();
         int ok = 0;
 
@@ -156,7 +159,6 @@ public class FlowersShopsItemsController {
                 try {
                     itemImage.setImage(new Image(itemm.getImg().replace("\\\\", "\\")));
                 } catch (Exception ex) {
-                    System.out.println(itemm.getImg().replace("\\\\", "\\"));
                     File invalid = new File("src/main/java/org/loose/fis/sre/Images/error.jpg");
                     Image inval = new Image(invalid.toURI().toString());
                     itemImage.setImage(inval);
@@ -164,6 +166,26 @@ public class FlowersShopsItemsController {
                 ok = 1;
             }
 
+        }
+        if(ok == 0)
+            addMessage.setText("Your data is invalid!");
+    }
+
+    @FXML
+    void handleaddInChartAction(javafx.event.ActionEvent event) throws Exception {
+        itemi = ItemsService.getDataa();
+        int ok = 0;
+
+        for (Item itemm : itemi ) {
+            if( idField.getText().equals(itemm.getId())) {
+                try {
+                    ItemsService.addItemChart(itemm.getId(), itemm.getName(), itemm.getPrice(), itemm.getSize());
+                    addMessage.setText("Item added succesfully!");
+                } catch (Exception ex) {
+                    addMessage.setText("Try to introduce the item id agan!");
+                }
+                ok = 1;
+            }
         }
         if(ok == 0)
             addMessage.setText("Your data is invalid!");
