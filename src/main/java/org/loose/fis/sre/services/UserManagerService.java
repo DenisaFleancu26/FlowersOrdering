@@ -2,16 +2,17 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-import org.loose.fis.sre.exceptions.InvalidDataException;
-import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.exceptions.EmailAlreadyExistsException;
 import org.loose.fis.sre.exceptions.FlowerNameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.InvalidDataException;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.UserManager;
-
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -19,6 +20,23 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class UserManagerService {
 
     private static ObjectRepository<UserManager> userRepository;
+
+    private List<UserManager> users = new ArrayList<>();
+
+    public static List<UserManager> getDataa() {
+        List<UserManager> users = new ArrayList<>();
+        UserManager usf;
+
+        for (UserManager user : userRepository.find()){
+            usf = new UserManager();
+            usf.setFlowerShopName(user.getFlowerShopName());
+            usf.setAddress(user.getAddress());
+            usf.setEmail(user.getEmail());
+            usf.setPhoneNumber(user.getPhoneNumber());
+            users.add(usf);
+        }
+        return users;
+    }
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
