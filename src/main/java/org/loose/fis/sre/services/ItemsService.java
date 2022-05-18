@@ -17,6 +17,7 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class ItemsService {
 
     private static ObjectRepository<Item> userRepository;
+    private static ObjectRepository<Item> userChartRepository;
 
     private List<Item> items = new ArrayList<>();
 
@@ -44,6 +45,14 @@ public class ItemsService {
         userRepository = database.getRepository(Item.class);
     }
 
+    public static void initDatabaseChart() {
+        Nitrite database = Nitrite.builder()
+                .filePath(getPathToFile("Flowers-OrderingItemsChart.db").toFile())
+                .openOrCreate("Flower15", "Blummen");
+
+        userChartRepository = database.getRepository(Item.class);
+    }
+
     public static void deleteItem(String id ) throws IdDoesNotExistException {
         checkIdDoesNotExist(id);
         userRepository.remove(eq("id", id));
@@ -52,6 +61,10 @@ public class ItemsService {
     public static void addItem(String id, String name, String price, String size, String img) throws IdAlreadyExistsException {
         checkIdDoesNotAlreadyExist(id);
         userRepository.insert(new Item(id, name, price, size, img));
+    }
+
+    public static void addItemChart(String id, String name, String price, String size) {
+        userChartRepository.insert(new Item(id, name, price, size));
     }
 
     private static void checkIdDoesNotExist(String id) throws IdDoesNotExistException {
