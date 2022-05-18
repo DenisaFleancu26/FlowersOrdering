@@ -67,12 +67,12 @@ public class FlowersShopController {
                 FlowerShopStyleController flowersShopsStyle = fxmlLoader.getController();
                 flowersShopsStyle.setData(flowersShopss);
 
-                if( column == 4) {
+                if( column == 3) {
                     column = 0;
                     row++;
                 }
 
-                ItemContainer.add(AranjBox, column++, row );
+                ItemContainer.add(AranjBox, ++column, row );
                 GridPane.setMargin(AranjBox, new Insets(10));
 
             }
