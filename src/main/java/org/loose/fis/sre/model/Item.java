@@ -23,6 +23,13 @@ public class Item {
         this.img = img;
     }
 
+    public Item(String id, String name, String price, String size) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.size = size;
+    }
+
     public String getImg() {
         return img;
     }
