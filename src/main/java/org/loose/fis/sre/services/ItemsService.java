@@ -37,6 +37,21 @@ public class ItemsService {
         return items;
     }
 
+    public static List<Item> getDataaChart() {
+        List<Item> items = new ArrayList<>();
+        Item itm;
+
+        for (Item item : userChartRepository.find()){
+            itm = new Item();
+            itm.setId(item.getId());
+            itm.setName(item.getName());
+            itm.setPrice(item.getPrice());
+            itm.setSize(item.getSize());
+            items.add(itm);
+        }
+        return items;
+    }
+
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("Flowers-OrderingItems.db").toFile())

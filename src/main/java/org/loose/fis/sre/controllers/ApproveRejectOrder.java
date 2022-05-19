@@ -7,15 +7,20 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.loose.fis.sre.model.Item;
+import org.loose.fis.sre.services.ItemsService;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApproveRejectOrder {
 
@@ -53,7 +58,18 @@ public class ApproveRejectOrder {
     private ImageView orderImage;
 
     @FXML
+    private ListView<String> listView;
+
+    private List<Item> itemi = new ArrayList<>();
+
+    @FXML
     public void initialize() throws IOException {
+
+        itemi = ItemsService.getDataaChart();
+
+        for (Item c : itemi){
+            listView.getItems().addAll("ID: " + c.getId() + " Name: " + c.getName() + " Size: " + c.getSize() + " Price: " + c.getPrice());
+        }
 
         File fundalFile = new File("src/main/java/org/loose/fis/sre/images/fundal.jpg");
         Image fundalImage = new Image(fundalFile.toURI().toString());
