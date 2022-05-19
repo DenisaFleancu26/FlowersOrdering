@@ -200,5 +200,16 @@ public class MainPageManager {
         stage.show();
     }
 
+    @FXML
+    void handleApproveRejectOrders(ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getClassLoader().getResource("ApproveRejectOrder.fxml"));
+        Pane root = (Pane)fxmlLoader.load();
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        stage.setTitle("Approve/Reject Orders (Manager)");
+        stage.setScene(new Scene((Parent)root, 1200.0, 700.0));
+        stage.show();
+    }
+
 }
 
