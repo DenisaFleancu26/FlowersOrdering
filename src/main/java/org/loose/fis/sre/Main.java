@@ -22,6 +22,7 @@ public class Main extends Application {
         UserManagerService.initDatabase();
         ItemsService.initDatabase();
         ItemsService.initDatabaseChart();
+        ItemsService.initDatabaseHistory();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 730, 468));

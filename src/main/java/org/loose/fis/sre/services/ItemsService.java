@@ -18,6 +18,7 @@ public class ItemsService {
 
     private static ObjectRepository<Item> userRepository;
     private static ObjectRepository<Item> userChartRepository;
+    private static ObjectRepository<Item> userHistoryRepository;
 
     private List<Item> items = new ArrayList<>();
 
@@ -52,6 +53,21 @@ public class ItemsService {
         return items;
     }
 
+    public static List<Item> getDataaHistory() {
+        List<Item> items = new ArrayList<>();
+        Item itm;
+
+        for (Item item : userHistoryRepository.find()){
+            itm = new Item();
+            itm.setId(item.getId());
+            itm.setName(item.getName());
+            itm.setPrice(item.getPrice());
+            itm.setSize(item.getSize());
+            items.add(itm);
+        }
+        return items;
+    }
+
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("Flowers-OrderingItems.db").toFile())
@@ -66,6 +82,14 @@ public class ItemsService {
                 .openOrCreate("Flower15", "Blummen");
 
         userChartRepository = database.getRepository(Item.class);
+    }
+
+    public static void initDatabaseHistory() {
+        Nitrite database = Nitrite.builder()
+                .filePath(getPathToFile("Flowers-OrderingItemsHistory.db").toFile())
+                .openOrCreate("Flower15", "Blummen");
+
+        userHistoryRepository = database.getRepository(Item.class);
     }
 
     public static void deleteItem(String id ) throws IdDoesNotExistException {
