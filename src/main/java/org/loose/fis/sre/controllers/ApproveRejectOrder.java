@@ -145,7 +145,16 @@ public class ApproveRejectOrder {
         stage.show();
     }
 
+    @FXML
+    void handleRejectOrderAction() {
+        itemi2 = ItemsService.getDataaChart();
 
+        for(Item c : itemi2){
+            ItemsService.moveItemHistory(c.getId(), c.getName(), c.getPrice(), c.getSize() );
+        }
+        ItemsService.moveItemHistory(" ", "Order Rejected!", " ", " "  );
+        approveMessage.setText("Order Rejected!");
+    }
     @FXML
     void handleApproveOrderAction() {
         itemi2 = ItemsService.getDataaChart();
