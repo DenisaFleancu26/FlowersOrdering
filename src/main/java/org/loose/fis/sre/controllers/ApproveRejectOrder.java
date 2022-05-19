@@ -1,16 +1,13 @@
 package org.loose.fis.sre.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -37,6 +34,12 @@ public class ApproveRejectOrder {
     private Button DashboardUp;
 
     @FXML
+    private Button rejectButton;
+
+    @FXML
+    private Button approveButton;
+
+    @FXML
     private ImageView LogOutImage;
 
     @FXML
@@ -60,7 +63,14 @@ public class ApproveRejectOrder {
     @FXML
     private ListView<String> listView;
 
+    @FXML
+    private Text rejectMessage;
+
+    @FXML
+    private Text approveMessage;
+
     private List<Item> itemi = new ArrayList<>();
+    private List<Item> itemi2 = new ArrayList<>();
 
     @FXML
     public void initialize() throws IOException {
@@ -68,7 +78,7 @@ public class ApproveRejectOrder {
         itemi = ItemsService.getDataaChart();
 
         for (Item c : itemi){
-            listView.getItems().addAll("ID: " + c.getId() + " Name: " + c.getName() + " Size: " + c.getSize() + " Price: " + c.getPrice());
+            listView.getItems().addAll(  c.getId() + " " + c.getName() + " " + c.getSize() + " " + c.getPrice());
         }
 
         File fundalFile = new File("src/main/java/org/loose/fis/sre/images/fundal.jpg");
@@ -135,14 +145,16 @@ public class ApproveRejectOrder {
         stage.show();
     }
 
-    @FXML
-    void handleRejectOrderAction(MouseEvent event) {
-
-    }
 
     @FXML
-    void handleApproveOrderAction(MouseEvent event) {
+    void handleApproveOrderAction() {
+        itemi2 = ItemsService.getDataaChart();
 
+        for(Item c : itemi2){
+            ItemsService.moveItemHistory(c.getId(), c.getName(), c.getPrice(), c.getSize() );
+        }
+        ItemsService.moveItemHistory(" ", "Order Approved!", " ", " "  );
+        approveMessage.setText("Order Approved!");
     }
 
 }

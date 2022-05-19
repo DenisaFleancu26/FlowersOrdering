@@ -102,6 +102,10 @@ public class ItemsService {
         userRepository.insert(new Item(id, name, price, size, img));
     }
 
+    public static void moveItemHistory(String id, String name, String price, String size){
+        userHistoryRepository.insert(new Item(id,name,price,size));
+    }
+
     public static void addItemChart(String id, String name, String price, String size) {
         userChartRepository.insert(new Item(id, name, price, size));
     }
