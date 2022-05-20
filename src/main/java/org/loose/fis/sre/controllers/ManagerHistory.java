@@ -115,5 +115,13 @@ public class ManagerHistory {
         stage.show();
 
     }
+    @FXML
+    void handShowHistoryMAction() {
+        itemi = ItemsService.getDataaHistory();
+
+        for (Item c : itemi){
+            listView.getItems().addAll(  c.getId() + " " + c.getName() + " " + c.getSize() + " " + c.getPrice());
+        }
+    }
 
 }

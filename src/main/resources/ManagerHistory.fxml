@@ -59,7 +59,7 @@
                     </image>
                 </ImageView>
                 <ListView fx:id="listView" layoutX="436.0" layoutY="133.0" prefHeight="491.0" prefWidth="542.0" />
-                <Button fx:id="showHistory" layoutX="436.0" layoutY="89.0" mnemonicParsing="false" style="-fx-background-color: #800060;" text="View the list of past orders" textFill="#f2eeee">
+                <Button fx:id="showHistory" layoutX="436.0" layoutY="89.0" mnemonicParsing="false" onAction="#handShowHistoryMAction" style="-fx-background-color: #800060;" text="View the list of past orders" textFill="#f2eeee">
                     <font>
                         <Font name="Leelawadee UI Bold" size="15.0" />
                     </font>
