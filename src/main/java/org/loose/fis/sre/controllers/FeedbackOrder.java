@@ -54,7 +54,10 @@ public class FeedbackOrder {
     @FXML
     private Button sendButton;
 
-    private List<Item> itemi2 = new ArrayList<>();
+    @FXML
+    private Button recivedButton;
+
+    private List<Item> itemi = new ArrayList<>();
 
     @FXML
     public void initialize() throws IOException {
@@ -114,7 +117,22 @@ public class FeedbackOrder {
         stage.show();
     }
 
+    @FXML
+    void handleSendFeedbackAction(javafx.event.ActionEvent event) throws Exception{
 
+        itemi = ItemsService.getDataaHistory();
+
+        for(Item c : itemi){}
+        ItemsService.moveItemHistory("Customer feedback: ", feedbackField.getText(), "  ", "  "  );
+
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("StatusOrder.fxml"));
+        Pane root = fxmlLoader.<Pane>load();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        stage.setTitle("Status Order.");
+        stage.setScene(new Scene(root, 1200, 700));
+        stage.show();
+    }
 
 }
 
