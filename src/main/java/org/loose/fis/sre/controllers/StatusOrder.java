@@ -58,6 +58,9 @@ public class StatusOrder {
     @FXML
     private Text statusOrderMessage;
 
+    @FXML
+    private Button recivedButton;
+
     private List<Item> itemi = new ArrayList<>();
     private List<Item> itemi2 = new ArrayList<>();
 
@@ -134,6 +137,17 @@ public class StatusOrder {
             finalStatus.getItems().addAll(  c.getId() + " " + c.getName() + " " + c.getSize() + " " + c.getPrice());
         }
         statusOrderMessage.setText("The status of the order!");
+    }
+
+    @FXML
+    void handleFeedbackAction(javafx.event.ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("FeedbackOrder.fxml"));
+        Pane root = fxmlLoader.load();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        stage.setTitle("Feedback");
+        stage.setScene(new Scene(root, 1200, 700));
+        stage.show();
     }
 
 }
