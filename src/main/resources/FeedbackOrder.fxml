@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.FeedbackOrder">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffe6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #800060;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Button fx:id="DashboardUp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleDashboardUpAction" prefHeight="54.0" prefWidth="834.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Leelawadee UI Bold" size="20.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="DashboardImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../java/org/loose/fis/sre/Images/home.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="Back" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="54.0" prefWidth="192.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Back" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Leelawadee UI Bold" size="20.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="BackImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../java/org/loose/fis/sre/Images/back.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="LogOutUp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleLogOutAction" prefHeight="54.0" prefWidth="162.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Leelawadee UI Bold" size="20.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="LogOutImage" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../java/org/loose/fis/sre/Images/log-out.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                    <children>
+                        <ImageView fx:id="ImageBackground" fitHeight="654.0" fitWidth="300.0" layoutY="4.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="0.0">
+                            <image>
+                                <Image url="@../java/org/loose/fis/sre/Images/fundal.jpg" />
+                            </image>
+                        </ImageView>
+                  <Text layoutX="429.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Write your feedback" wrappingWidth="180.44696044921875">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="feedbackImage" fitHeight="189.0" fitWidth="204.0" layoutX="889.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../java/org/loose/fis/sre/Images/feedback.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="sendButton" layoutX="871.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleSendFeedbackAction" style="-fx-background-color: #800060;" text="Send" textFill="#f2eeee">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="feedbackField" layoutX="390.0" layoutY="127.0" prefHeight="368.0" prefWidth="410.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
