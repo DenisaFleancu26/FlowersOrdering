@@ -113,6 +113,13 @@ public class CustomerHistory {
         stage.show();
 
     }
+    @FXML
+    void handShowHistoryCAction() {
+        itemi = ItemsService.getDataaHistory();
 
+        for (Item c : itemi){
+            listView.getItems().addAll(  c.getId() + " " + c.getName() + " " + c.getSize() + " " + c.getPrice());
+        }
+    }
 
 }
