@@ -210,6 +210,15 @@ public class MainPageManager {
         stage.setScene(new Scene((Parent)root, 1200.0, 700.0));
         stage.show();
     }
-
+    @FXML
+    void handleManagerHistoryAction(ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getClassLoader().getResource("ManagerHistory.fxml"));
+        Pane root = (Pane)fxmlLoader.load();
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        stage.setTitle("Order History (Manager)");
+        stage.setScene(new Scene((Parent)root, 1200.0, 700.0));
+        stage.show();
+    }
 }
 
