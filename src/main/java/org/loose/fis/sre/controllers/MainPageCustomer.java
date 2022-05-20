@@ -221,4 +221,15 @@ public class MainPageCustomer {
         stage.show();
     }
 
+    @FXML
+    void handleCustomerHistoryAction(ActionEvent event) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getClassLoader().getResource("CustomerHistory.fxml"));
+        Pane root = (Pane)fxmlLoader.load();
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        stage.setTitle("Order History (Customer)");
+        stage.setScene(new Scene((Parent)root, 1200.0, 700.0));
+        stage.show();
+    }
+
 }

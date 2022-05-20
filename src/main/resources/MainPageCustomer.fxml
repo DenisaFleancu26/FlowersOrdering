@@ -38,7 +38,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="HistoryUp" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="History" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="HistoryUp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleCustomerHistoryAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="History" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Leelawadee UI Bold" size="20.0" />
                            </font>
@@ -130,7 +130,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="History" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="History" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="History" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleCustomerHistoryAction" prefHeight="95.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="History" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Leelawadee UI Bold" size="20.0" />
                            </font>
