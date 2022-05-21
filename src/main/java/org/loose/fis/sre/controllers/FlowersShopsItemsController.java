@@ -182,7 +182,7 @@ public class FlowersShopsItemsController {
                     ItemsService.addItemChart(itemm.getId(), itemm.getName(), itemm.getPrice(), itemm.getSize());
                     addMessage.setText("Item added succesfully!");
                 } catch (Exception ex) {
-                    addMessage.setText("Try to introduce the item id agan!");
+                    addMessage.setText("Try to introduce the item id again!");
                 }
                 ok = 1;
             }
