@@ -1,10 +1,12 @@
 package org.loose.fis.sre.services;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.EmailAlreadyExistsException;
 import org.loose.fis.sre.exceptions.InvalidDataException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
-import org.loose.fis.sre.exceptions.EmailAlreadyExistsException;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -17,9 +19,10 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class UserService {
 
     private static ObjectRepository<User> userRepository;
+    private static Nitrite database;
 
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database = Nitrite.builder()
                 .filePath(getPathToFile("Flowers-Ordering.db").toFile())
                 .openOrCreate("Flower13", "Blummen");
 
@@ -64,7 +67,7 @@ public class UserService {
         if(ok==0) throw new InvalidDataException();
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -83,6 +86,20 @@ public class UserService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+    }
+
+    public static ObservableList<User> Lista()
+    {
+        ObservableList<User> list= FXCollections.observableArrayList();
+
+        for (User k : userRepository.find()) {
+            list.add(k);
+        }
+        return list;
+    }
+
+    public static Nitrite getDatabase() {
+        return database;
     }
 
 
