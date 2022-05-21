@@ -1,5 +1,7 @@
 package org.loose.fis.sre.services;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.IdAlreadyExistsException;
@@ -19,6 +21,9 @@ public class ItemsService {
     private static ObjectRepository<Item> userRepository;
     private static ObjectRepository<Item> userChartRepository;
     private static ObjectRepository<Item> userHistoryRepository;
+    private static Nitrite database1;
+    private static Nitrite database2;
+    private static Nitrite database3;
 
     private List<Item> items = new ArrayList<>();
 
@@ -69,27 +74,27 @@ public class ItemsService {
     }
 
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database1 = Nitrite.builder()
                 .filePath(getPathToFile("Flowers-OrderingItems.db").toFile())
                 .openOrCreate("Flower15", "Blummen");
 
-        userRepository = database.getRepository(Item.class);
+        userRepository = database1.getRepository(Item.class);
     }
 
     public static void initDatabaseChart() {
-        Nitrite database = Nitrite.builder()
+        database2 = Nitrite.builder()
                 .filePath(getPathToFile("Flowers-OrderingItemsChart.db").toFile())
                 .openOrCreate("Flower15", "Blummen");
 
-        userChartRepository = database.getRepository(Item.class);
+        userChartRepository = database2.getRepository(Item.class);
     }
 
     public static void initDatabaseHistory() {
-        Nitrite database = Nitrite.builder()
+        database3 = Nitrite.builder()
                 .filePath(getPathToFile("Flowers-OrderingItemsHistory.db").toFile())
                 .openOrCreate("Flower15", "Blummen");
 
-        userHistoryRepository = database.getRepository(Item.class);
+        userHistoryRepository = database3.getRepository(Item.class);
     }
 
     public static void deleteItem(String id ) throws IdDoesNotExistException {
@@ -126,6 +131,42 @@ public class ItemsService {
             if (Objects.equals(id, item.getId()))
                 throw new IdAlreadyExistsException(id);
 
+    }
+
+    public static Nitrite getDataBase1() {
+        return database1;
+    }
+    public static Nitrite getDataBase2() {
+        return database2;
+    }
+    public static Nitrite getDataBase3() {
+        return database3;
+    }
+
+    public static ObservableList<Item> Lista1()
+    {
+        ObservableList<Item> list1= FXCollections.observableArrayList();
+
+        for (Item k : userRepository.find()) {
+            list1.add(k);
+        }
+        return list1;
+    }
+    public static ObservableList<Item> Lista2() {
+        ObservableList<Item> list2 = FXCollections.observableArrayList();
+
+        for (Item k : userChartRepository.find()) {
+            list2.add(k);
+        }
+        return list2;
+    }
+    public static ObservableList<Item> Lista3() {
+        ObservableList<Item> list3 = FXCollections.observableArrayList();
+
+        for (Item k : userHistoryRepository.find()) {
+            list3.add(k);
+        }
+        return list3;
     }
 
 }
