@@ -1,10 +1,10 @@
-#Flowers Ordering
+# Flowers Ordering
 
 
-##General Description
+## General Description
 The purpose of this application is to help a customer choose both the desired flower shop and the most suitable flower arrangement from a variety of models.
 
-##Technologies Used
+## Technologies Used
 
 * [Java 17](https://www.oracle.com/java/technologies/javase-downloads.html)
 * [JavaFx](https://openjfx.io/openjfx-docs/) (GUI)
@@ -32,12 +32,12 @@ The project has already been setup for Maven according to the above link.
 To start and run the project use one of the following commands:
 * `mvn javafx:run` or `./mvnw javafx:run` (run the `run` goal of the `javafx` maven plugin)
 
-##Functionality
+## Functionality
 A user, **customer** or **manager**, can log in, reset password or create an account if they don't already have one.
 
 <img src="docs/login.png" width="250"/> <img src="docs/customerRegister.png" width="250"/> <img src="docs/managerRegister.png" width="250"/> <img src="docs/resetPassword.png" width="250"/>
 
-###Customer:
+### Customer:
 
 A customer can navigate to the home page where he will see all the functionality: 
 * search an item in shop 
@@ -48,7 +48,7 @@ A customer can navigate to the home page where he will see all the functionality
 
 <img src="docs/mainPageCustomer.png" width="500"/>
 
-###Manager:
+### Manager:
 
 A manager can navigate to the home page where he will see all the functionality:
 * he can approve or reject an order
